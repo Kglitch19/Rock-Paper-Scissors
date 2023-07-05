@@ -7,7 +7,29 @@
 
 <body>
     <script>
-
+        
+        function getComputerChoice() {
+            const randomNumber = Math.floor(Math.random()*3) + 1;
+            switch(randomNumber) {
+                case 1:
+                    /*console.log("Rock");
+                    console.log(randomNumber);*/
+                    return "Rock";
+                    break;
+                case 2:
+                    /*console.log("Paper");
+                    console.log(randomNumber);*/
+                    return "Paper";
+                    break;
+                case 3:
+                    /*console.log("Scissors");
+                    console.log(randomNumber);*/
+                    return "Scissors";
+                    break;
+            }
+        }
+        
+        getComputerChoice();
     </script>
 </body>
 </html>
