@@ -7,29 +7,77 @@
 
 <body>
     <script>
+
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            if (playerSelection === "rock") {
+                if (computerSelection === "rock") {
+                    return "Draw"; 
+                }
+
+                if (computerSelection === "paper") {
+                    return "You lose! Paper beats Rock";
+                }
+
+                if (computerSelection === "scissors") {
+                    return "You win! Rock beats Scissors";
+                }
+            }
+
+            if (playerSelection === "paper") {
+                if (computerSelection === "paper") {
+                    return "Draw"; 
+                }
+
+                if (computerSelection === "rock") {
+                    return "You win! Paper beats Rock";
+                }
+
+                if (computerSelection === "scissors") {
+                    return "You lose! Scissors beat Paper";
+                }
+            }
+
+            if (playerSelection === "scissors") {
+                if (computerSelection === "scissors") {
+                    return "Draw"; 
+                }
+
+                if (computerSelection === "paper") {
+                    return "You win! Scissors beat Paper";
+                }
+
+                if (computerSelection === "rock") {
+                    return "You lose! Rock beats Scissors";
+                }
+            }
+        }
         
         function getComputerChoice() {
             const randomNumber = Math.floor(Math.random()*3) + 1;
             switch(randomNumber) {
                 case 1:
-                    /*console.log("Rock");
+                    /*console.log("rock");
                     console.log(randomNumber);*/
-                    return "Rock";
-                    break;
+                    return "rock";
+                    break;                              
                 case 2:
-                    /*console.log("Paper");
+                    /*console.log("paper");
                     console.log(randomNumber);*/
-                    return "Paper";
+                    return "paper";
                     break;
                 case 3:
-                    /*console.log("Scissors");
+                    /*console.log("scissors");
                     console.log(randomNumber);*/
-                    return "Scissors";
+                    return "scissors";
                     break;
             }
         }
         
-        getComputerChoice();
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+
     </script>
 </body>
 </html>
