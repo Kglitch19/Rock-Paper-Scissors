@@ -8,51 +8,111 @@
 <body>
     <script>
 
+        //Function to play 5 rounds of the game, keep score and announce champ 
+        function game() {
+
+            var score=0, playerScore = 0, compScore = 0;
+
+            for (var i=1; i<=5; i++) {      //Plays game 5 times
+                const playerSelection = prompt("Select: Rock, Paper, or Scissors?");
+                const computerSelection = getComputerChoice();
+                score = playRound(playerSelection, computerSelection);
+                
+                //Tracking player's and computer's scores
+                if (score === 1) {
+                    playerScore++;
+                } 
+
+                else if (score === 2) {
+                    compScore++;
+                }
+
+                else {
+                    console.log("Round #", i, " player score: ", playerScore, 
+                    " computer score: ", compScore);
+                    continue;
+                }
+
+                console.log("Round #", i, " player score: ", playerScore, 
+                " computer score: ", compScore);
+            }
+
+            if (playerScore > compScore) {
+                console.log("Player Score: ", playerScore, 
+                " Computer Score: ", compScore);
+                console.log("Final Score: You win!!");
+            }
+
+            else if (compScore > playerScore) {
+                console.log("Player Score: ", playerScore, 
+                " Computer Score: ", compScore);
+                console.log("Final Score: You lose!");
+            }
+
+            else {
+                console.log("Player Score: ", playerScore, 
+                " Computer Score: ", compScore);
+                console.log("Final Score: Tie!");
+            }
+            
+        }
+
+        //Plays a round of the game
         function playRound(playerSelection, computerSelection) {
             playerSelection = playerSelection.toLowerCase();
             if (playerSelection === "rock") {
                 if (computerSelection === "rock") {
-                    return "Draw"; 
-                }
-
-                if (computerSelection === "paper") {
-                    return "You lose! Paper beats Rock";
+                    console.log("Draw");
+                    return 3; 
                 }
 
                 if (computerSelection === "scissors") {
-                    return "You win! Rock beats Scissors";
+                    console.log("You win! Rock beats Scissors");
+                    return 1;
+                }
+
+                if (computerSelection === "paper") {
+                    console.log("You lose! Paper beats Rock");
+                    return 2;
                 }
             }
 
             if (playerSelection === "paper") {
                 if (computerSelection === "paper") {
-                    return "Draw"; 
+                    console.log("Draw");
+                    return 3; 
                 }
 
                 if (computerSelection === "rock") {
-                    return "You win! Paper beats Rock";
+                    console.log("You win! Paper beats Rock");
+                    return 1;
                 }
 
                 if (computerSelection === "scissors") {
-                    return "You lose! Scissors beat Paper";
+                    console.log("You lose! Scissors beat Paper");
+                    return 2;
                 }
             }
 
             if (playerSelection === "scissors") {
                 if (computerSelection === "scissors") {
-                    return "Draw"; 
+                    console.log("Draw"); 
+                    return 3;
                 }
 
                 if (computerSelection === "paper") {
-                    return "You win! Scissors beat Paper";
+                    console.log("You win! Scissors beat Paper");
+                    return 1;
                 }
 
                 if (computerSelection === "rock") {
-                    return "You lose! Rock beats Scissors";
+                    console.log("You lose! Rock beats Scissors");
+                    return 2;
                 }
             }
         }
         
+        //Gets a random selection(from the computer)
         function getComputerChoice() {
             const randomNumber = Math.floor(Math.random()*3) + 1;
             switch(randomNumber) {
@@ -73,11 +133,10 @@
                     break;
             }
         }
-        
-        const playerSelection = "rock";
-        const computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
-
+       
+        //Calling the game function 
+        game();
+            
     </script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+[33mcommit 5ac76489cc1899b35e4d1a2ea588f08e5c6ee8d7[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Khadeeja <khfarouk1593@outlook.com>
+Date:   Thu Jul 6 17:18:01 2023 +0300
+
+    Create a function to compare the player's and computer's selections and return the result
+
+[33mcommit d8437d11cac517ed5c9ab4ab2cfe8fa165b957cd[m
+Author: Khadeeja <khfarouk1593@outlook.com>
+Date:   Wed Jul 5 18:44:35 2023 +0300
+
+    Create a function to return the computer's random choice in the game
+
+[33mcommit 0b1ecbaa0732f9c61f591a722e1132cbaf96dc31[m
+Author: Khadeeja <khfarouk1593@outlook.com>
+Date:   Wed Jul 5 10:44:59 2023 +0300
+
+    Create a blank HTML document with a script tag
+
+[33mcommit bcb5b5299d57a35fe954901e04ef3af19937243e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Kglitch19 <106684318+Kglitch19@users.noreply.github.com>
+Date:   Wed Jul 5 10:20:54 2023 +0300
+
+    Initial commit
